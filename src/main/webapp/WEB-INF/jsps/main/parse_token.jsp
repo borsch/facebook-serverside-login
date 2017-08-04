@@ -5,9 +5,9 @@
 </head>
 <body>
 
-${data.id}
+$id}
 <br />
-${data.token}
+${token}
 
 </body>
 </html>

@@ -38,10 +38,11 @@ public class IndexController {
 
     @RequestMapping(value = "/facebook_token", method = RequestMethod.POST)
     public String parseToken(
-            @RequestBody FacebookData facebookData,
+            HttpServletRequest request,
             Model model
     ) {
-        model.addAttribute("data", facebookData);
+        model.addAttribute("token", request.getParameter("token"));
+        model.addAttribute("id", request.getParameter("id"));
         return "main/parse_token";
     }
 
