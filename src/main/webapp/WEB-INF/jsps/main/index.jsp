@@ -17,7 +17,7 @@ client_id=799295533586280
     <Br />
 </c:forEach>
 
-<script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script>
     var hash = location.hash;
     if (hash.length) {
