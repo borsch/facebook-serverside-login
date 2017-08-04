@@ -1,7 +1,9 @@
 package com.borsch.controller.web;
 
+import com.borsch.domain.FacebookData;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -36,9 +38,10 @@ public class IndexController {
 
     @RequestMapping(value = "/facebook_token", method = RequestMethod.POST)
     public String parseToken(
-            @RequestParam String token
+            @RequestBody FacebookData facebookData,
+            Model model
     ) {
-
+        model.addAttribute("data", facebookData);
         return "main/parse_token";
     }
 

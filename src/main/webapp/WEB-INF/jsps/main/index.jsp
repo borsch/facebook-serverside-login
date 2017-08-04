@@ -17,6 +17,11 @@ client_id=799295533586280
     <Br />
 </c:forEach>
 
+<form action="/facebook_token" method="post" id="facebook_token">
+    <input type="hidden" name="id">
+    <input type="hidden" name="token">
+</form>
+
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script>
     var hash = location.hash;
@@ -35,7 +40,12 @@ client_id=799295533586280
                 url: 'https://graph.facebook.com/debug_token?input_token=' + access_token +
                 '&access_token=EAALW9H5ZAl2gBANtD9qPZARUntI1YQm1d8YPGWnnptmTKIjyUnDs6pB3sZBne3cZBbpx7ZCuGaNAlpwpwh63XWrDFF5cZCyPbpZAyoNrVwe1UfBX6CoFA1gjY4x2cxZAPgyjh8dpcqceiHRIaDqSQyivHAVz7skZCyZCWVprtfBw66pD0O34VOuoctMCZCl35MV2uwZD',
                 success: function(response) {
-                    console.log(response);
+                    if (response.data) {
+                        var $form = $('#facebook_token');
+                        $form.find('[name=id]').val(response.data.user_id);
+                        $form.find('[name=token]').val(access_token);
+                        $form.submit();
+                    }
                 }
             })
         }
