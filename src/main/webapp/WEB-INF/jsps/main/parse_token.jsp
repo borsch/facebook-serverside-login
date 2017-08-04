@@ -4,10 +4,6 @@
     <title>Title</title>
 </head>
 <body>
-
-$id}
-<br />
-${token}
-
+${data}
 </body>
 </html>
