@@ -21,7 +21,7 @@ client_id=799295533586280
 <script>
     var hash = location.hash;
     if (hash.length) {
-        var split = hash.split('&'),
+        var split = hash.substr(1).split('&'),
             access_token = null;
 
         for (var i = 0; i < split.length; ++i) {
