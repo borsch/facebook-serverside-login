@@ -16,7 +16,7 @@ import java.util.Map;
 @Controller
 public class IndexController {
 
-    @RequestMapping(value = {"/facebook", "/"}, method = RequestMethod.GET)
+    @RequestMapping(value = "/facebook", method = RequestMethod.GET)
     public String indexGet(
             HttpServletRequest request,
             Model model
@@ -34,7 +34,7 @@ public class IndexController {
         return "main/index";
     }
 
-    @RequestMapping(value = "facebook_token", method = RequestMethod.POST)
+    @RequestMapping(value = "/facebook_token", method = RequestMethod.POST)
     public String parseToken(
             @RequestParam String token
     ) {
