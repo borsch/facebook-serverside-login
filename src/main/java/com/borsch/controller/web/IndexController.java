@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
@@ -31,6 +32,14 @@ public class IndexController {
     ){
         facebookPost(request, model);
         return "main/index";
+    }
+
+    @RequestMapping(value = "facebook_token", method = RequestMethod.POST)
+    public String parseToken(
+            @RequestParam String token
+    ) {
+
+        return "main/parse_token";
     }
 
     private void facebookPost(HttpServletRequest request, Model model) {
