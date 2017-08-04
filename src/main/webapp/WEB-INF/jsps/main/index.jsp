@@ -5,7 +5,11 @@
     <title>index</title>
 </head>
 <body>
-<a href="https://www.facebook.com/v2.10/dialog/oauth?client_id=799295533586280&redirect_uri=https://facebook-login-test-borsch.herokuapp.com/facebook">login</a>
+<a href="https://www.facebook.com/v2.10/dialog/oauth?
+client_id=799295533586280
+&redirect_uri=https://facebook-login-test-borsch.herokuapp.com/facebook
+&response_type=code%20token
+&scope=public_profile,email">login</a>
 
 <br />
 <c:forEach var="pair" items="${map}">

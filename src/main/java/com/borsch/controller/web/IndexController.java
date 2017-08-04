@@ -15,7 +15,7 @@ import java.util.Map;
 @Controller
 public class IndexController {
 
-    @RequestMapping(value = "/facebook", method = RequestMethod.GET)
+    @RequestMapping(value = {"/facebook", "/"}, method = RequestMethod.GET)
     public String indexGet(
             HttpServletRequest request,
             Model model
@@ -41,6 +41,7 @@ public class IndexController {
         }
 
         map.put("query", request.getQueryString());
+        map.put("method", request.getMethod());
 
         model.addAttribute("map", map);
     }
